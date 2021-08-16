@@ -1,0 +1,95 @@
+html {
+  font-size: 11px; /* mobile */
+}
+
+@screen sm {
+  html {
+    font-size: 12px; /* mobile - portrait */
+  }
+}
+
+@screen md {
+  html {
+    font-size: 13px; /* tablet */
+  }
+}
+
+@screen lg {
+  html {
+    font-size: 14px; /* desktop */
+  }
+}
+
+@screen xl {
+  html {
+    font-size: 15px; /* laptop */
+  }
+}
+
+@screen 2xl {
+  html {
+    font-size: 16px; /* laptop */
+  }
+}
+
+/*
+* Transitions: page
+*/
+.page-enter-active {
+  transition: opacity 0.5s;
+}
+
+.page-leave-active {
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fade-loader-enter-active {
+  transition: opacity .5s;
+}
+
+.fade-loader-leave-to {
+  opacity: 0;
+}
+
+/*
+* Transitions: fade
+*/
+.animate-fade {
+  animation: fade-in 0.1s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo, .icon {
+  animation: .2s appear;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+}
+
+/*
+* Transitions: lazy-loaded items
+*/
+.lazyLoad {
+  @apply transition transform ease-out translate-y-4 opacity-0 duration-200;
+}
+
+.lazyLoad.isLoaded {
+  @apply translate-y-0 opacity-100;
+}
